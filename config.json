@@ -1,0 +1,20 @@
+{
+  "version": "0.0.1",
+  "name": "Engadget",
+  "description": "Engadget中文版",
+  "keywords": [
+    "科技"
+  ],
+  "interval": 10,
+  "author": {
+    "name": "vimrus",
+    "email": "vimrus.com@gmail.com",
+    "url": "https://github.com/vimrus"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vimrus/Engadget"
+  },
+  "bugs": "https://github.com/vimrus/Engadget/issues",
+  "main": "index.js"
+}
