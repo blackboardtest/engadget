@@ -14,7 +14,7 @@ hubble.getXML('http://cn.engadget.com/rss.xml', function (error, response, $) {
 			var summary = dom.find('description').text().replace(/<\/?[^>]*>/g, '').trim();
 
 			hubble.getHtml(url, function (error, response, $) {
-				var content = $('figure').html();
+				var content = $('#page_body').find('img').eq(0).parent().html();
 				content += '<div>' + $('.article-text').eq(0).html() + '</div>';
 
 				var article = {
