@@ -2,7 +2,8 @@ hubble.getXML('http://cn.engadget.com/rss.xml', function (error, response, $) {
 	$('item').each(function (index, value) {
 
 		var url = $(this).find('link').text();
-		var key = url.substring(url.lastIndexOf('.com/') + 5).trim();
+		var u = new URL(url)
+		var key = u.pathname.trim('/');
 		var dom = $(this);
 
 		articles.get('key', key, function (article) {
