@@ -14,8 +14,10 @@ hubble.getXML('http://cn.engadget.com/rss.xml', function (error, response, $) {
 			var summary = dom.find('description').text().replace(/<\/?[^>]*>/g, '').trim();
 
 			hubble.getHtml(url, function (error, response, $) {
-				var content = $('#page_body').find('img').eq(0).parent().html();
-				content += '<div>' + $('.article-text').eq(0).html() + '</div>';
+				var content = '<div class="img-title">' + $('#page_body').find('img').eq(0).append($(this).clone()).html() + '</div>';
+				$('.article-text').each(functiopn() {
+					content += '<div class="article-text">' + $(this).html() + '</div>';
+				})
 
 				var article = {
 					title: title,
