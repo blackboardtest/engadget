@@ -21,6 +21,7 @@ hubble.getXML('http://cn.engadget.com/rss.xml', function (error, response, $) {
 				});
 
 				var article = {
+					key: key,
 					title: title,
 					content: content,
 					summary: summary,
