@@ -15,7 +15,8 @@ hubble.getXML('http://cn.engadget.com/rss.xml', function (error, response, $) {
 			var summary = dom.find('description').text().replace(/<\/?[^>]*>/g, '').trim();
 
 			hubble.getHtml(url, function (error, response, $) {
-				var content = '<div class="img-title"><img src="' + $('#page_body').find('img').attr('src') + '"/></div>';
+				var image   = $('#page_body').find('img').attr('src');
+				var content = '<div class="img-title"><img src="' + image + '"/></div>';
 				$('.article-text').each(function() {
 					content += '<div class="article-text">' + $(this).html() + '</div>';
 				});
@@ -25,7 +26,8 @@ hubble.getXML('http://cn.engadget.com/rss.xml', function (error, response, $) {
 					title: title,
 					content: content,
 					summary: summary,
-					url: url
+					url: url,
+					image : image
 				};
 				articles.append(article);
 			});
