@@ -3,10 +3,10 @@ hubble.getXML('http://cn.engadget.com/rss.xml', function (error, response, $) {
 
 		var url = $(this).find('link').text();
 		var compenents = url.split('/');
-		var key = compenents[compenents.length-2];
+		var id  = compenents[compenents.length-2];
 		var dom = $(this);
 
-		articles.get('key', key, function (article) {
+		articles.get('id', id, function (article) {
 			if (article) {
 				return;
 			}
@@ -22,7 +22,7 @@ hubble.getXML('http://cn.engadget.com/rss.xml', function (error, response, $) {
 				});
 
 				var article = {
-					key: key,
+					id: id,
 					title: title,
 					content: content,
 					summary: summary,
